@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unblocked Games</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: white;
+      text-align: center;
+    }
+    a {
+      color: #0f0;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+      font-size: 20px;
+    }
+    iframe {
+      width: 80%;
+      height: 500px;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Unblocked Games</h1>
+  <a href="?game=1v1lol">Play 1v1.lol</a>
+  <a href="?game=run3">Play Run 3</a>
+  <a href="?game=slope">Play Slope</a>
+
+  <div id="game-frame"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const game = params.get("game");
+    const games = {
+      "1v1lol": "https://1v1.lol",
+      "run3": "https://example.com/run3/index.html",
+      "slope": "https://example.com/slope/index.html"
+    };
+
+    if (game && games[game]) {
+      document.getElementById("game-frame").innerHTML =
+        `<iframe src="${games[game]}"></iframe>`;
+    }
+  </script>
+</body>
+</html>
